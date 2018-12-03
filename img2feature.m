@@ -24,7 +24,7 @@ function [feature]=img2feature(img)
             image=fac(x-15:x,y-15:y);
             
             %Curvelet transform
-            C = fdct_wrapping(image,0,1,4,8); fdct_wrapping can be downloaded from http://www.curvelet.org/software.html.
+            C = fdct_wrapping(image,0,1,4,8); %fdct_wrapping can be downloaded from http://www.curvelet.org/software.html.
             temp1=reshape(C{1,1}{1,1},1,[]);
             
             %calculate each curvelet coefficient of sub-regions into mean, norm, and standard deviation
