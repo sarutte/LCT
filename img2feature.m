@@ -28,8 +28,8 @@ function [feature]=img2feature(img)
             temp1=reshape(C{1,1}{1,1},1,[]);
             
             %calculate each curvelet coefficient of sub-regions into mean, norm, and standard deviation
-            fnorm=[fmean wentropy(temp1,'norm',2)];
-            fmean=[fnorm norm(temp1)/size(temp1,2)];
+            fnorm=[fmean wentropy(temp1,'shannon',2)];
+            fmean=[fnorm abs(sum(temp1))/size(temp1,2)];
             fsd=[fsd std(temp1)];           
         end
     end
